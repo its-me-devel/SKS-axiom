@@ -7,8 +7,9 @@
 
 	let { service }: Props = $props();
 	const Icon = $derived(service.icon);
-	const visibleItems = $derived(service.items.slice(0, 4));
-	const remaining = $derived(service.items.length - visibleItems.length);
+	let expanded = $state(false);
+	const visibleItems = $derived(expanded ? service.items : service.items.slice(0, 4));
+	const remaining = $derived(service.items.length - service.items.slice(0, 4).length);
 </script>
 
 <article class="card">
@@ -22,7 +23,16 @@
 			<li>{item}</li>
 		{/each}
 		{#if remaining > 0}
-			<li class="more">+{remaining} more</li>
+			<li>
+				<button
+					type="button"
+					class="more"
+					aria-expanded={expanded}
+					onclick={() => (expanded = !expanded)}
+				>
+					{expanded ? 'Show less' : `+${remaining} more`}
+				</button>
+			</li>
 		{/if}
 	</ul>
 </article>
@@ -91,8 +101,26 @@
 		border-radius: var(--radius-pill);
 	}
 
-	.chips li.more {
+	.chips li:has(.more) {
+		padding: 0;
+		background: none;
+		border: none;
+	}
+
+	button.more {
+		font: inherit;
+		font-size: var(--fs-2xs);
 		color: var(--cyan);
-		border-color: rgba(34, 211, 238, 0.3);
+		background: rgba(247, 245, 255, 0.05);
+		border: 1px solid rgba(34, 211, 238, 0.3);
+		padding: 0.3rem 0.65rem;
+		border-radius: var(--radius-pill);
+		cursor: pointer;
+		transition: border-color var(--dur-base) var(--ease-out);
+	}
+
+	button.more:hover,
+	button.more:focus-visible {
+		border-color: rgba(34, 211, 238, 0.6);
 	}
 </style>
