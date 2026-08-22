@@ -1,5 +1,5 @@
 <script lang="ts">
-	import iconSquare from '$lib/assets/logo/icon-square.png';
+	import iconSquare from '$lib/assets/logo/icon-square.svg';
 
 	interface Props {
 		size?: number;
