@@ -1,0 +1,106 @@
+/*
+  SKS Axiom — design tokens.
+  Single source of truth for color, type, spacing, radius and motion.
+  Components must consume these variables rather than hard-coded values.
+*/
+
+:root {
+	/* ---- base surfaces ---- */
+	--bg: #07050f;
+	--bg-deep: #030209;
+	--bg-elevated: #100b21;
+	--surface: rgba(247, 245, 255, 0.045);
+	--surface-strong: rgba(247, 245, 255, 0.08);
+	--surface-border: rgba(247, 245, 255, 0.1);
+	--surface-border-strong: rgba(247, 245, 255, 0.18);
+
+	/* ---- text ---- */
+	--text: #f6f4fd;
+	--text-muted: #b3aecb;
+	--text-dim: #776f97;
+
+	/* ---- brand spectrum ---- */
+	--magenta: #ff3ec4;
+	--violet: #8b5cf6;
+	--purple: #a855f7;
+	--blue: #4f6bff;
+	--cyan: #22d3ee;
+	--teal: #17a6a0;
+
+	/* ---- gradients ---- */
+	--grad-primary: linear-gradient(120deg, var(--magenta) 0%, var(--violet) 45%, var(--cyan) 100%);
+	--grad-primary-vivid: linear-gradient(120deg, #ff53d0 0%, #9b5cff 38%, #4f6bff 68%, #22e0f4 100%);
+	--grad-text: linear-gradient(100deg, #ffffff 0%, #d9d3ff 45%, #a9c9ff 100%);
+	--grad-surface: linear-gradient(
+		160deg,
+		rgba(139, 92, 246, 0.14) 0%,
+		rgba(34, 211, 238, 0.06) 50%,
+		rgba(255, 62, 196, 0.08) 100%
+	);
+	--grad-bg-wash:
+		radial-gradient(ellipse 60% 45% at 18% -8%, rgba(139, 92, 246, 0.35), transparent 60%),
+		radial-gradient(ellipse 55% 40% at 88% 8%, rgba(34, 211, 238, 0.22), transparent 60%),
+		radial-gradient(ellipse 70% 55% at 50% 105%, rgba(255, 62, 196, 0.16), transparent 60%);
+
+	/* ---- glow / elevation ---- */
+	--glow-violet: 0 0 80px rgba(139, 92, 246, 0.35);
+	--glow-cyan: 0 0 80px rgba(34, 211, 238, 0.28);
+	--glow-magenta: 0 0 80px rgba(255, 62, 196, 0.28);
+	--shadow-card: 0 20px 60px -20px rgba(3, 2, 12, 0.7);
+	--shadow-lift: 0 30px 80px -24px rgba(3, 2, 12, 0.85);
+
+	/* ---- type ---- */
+	--font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+	--font-body: 'Inter', system-ui, sans-serif;
+
+	--fs-2xs: 0.75rem;
+	--fs-xs: 0.8125rem;
+	--fs-sm: 0.9375rem;
+	--fs-base: 1.0625rem;
+	--fs-lg: 1.25rem;
+	--fs-xl: 1.5rem;
+	--fs-2xl: 2rem;
+	--fs-3xl: 2.75rem;
+	--fs-4xl: 3.75rem;
+	--fs-5xl: clamp(2.75rem, 3.2vw + 2rem, 5rem);
+
+	--lh-tight: 1.08;
+	--lh-snug: 1.25;
+	--lh-normal: 1.55;
+
+	/* ---- spacing scale ---- */
+	--space-3xs: 0.25rem;
+	--space-2xs: 0.5rem;
+	--space-xs: 0.75rem;
+	--space-sm: 1rem;
+	--space-md: 1.5rem;
+	--space-lg: 2.5rem;
+	--space-xl: 4rem;
+	--space-2xl: 6rem;
+	--space-3xl: 9rem;
+
+	--section-pad-block: clamp(4.5rem, 9vw, 8rem);
+	--container-w: 1280px;
+	--container-pad: clamp(1.25rem, 4vw, 3rem);
+
+	/* ---- radius ---- */
+	--radius-sm: 10px;
+	--radius-md: 18px;
+	--radius-lg: 28px;
+	--radius-pill: 999px;
+
+	/* ---- motion ---- */
+	--ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+	--ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+	--dur-fast: 180ms;
+	--dur-base: 320ms;
+	--dur-slow: 600ms;
+
+	/* ---- layers ---- */
+	--z-bg: 0;
+	--z-content: 10;
+	--z-nav: 100;
+	--z-overlay: 200;
+
+	color-scheme: dark;
+}
