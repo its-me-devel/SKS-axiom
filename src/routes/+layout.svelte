@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '$lib/styles/global.css';
-	import iconSquare from '$lib/assets/logo/icon-square.png';
+	import iconSquare from '$lib/assets/logo/icon-square.svg';
 	import Nav from '$lib/components/Nav.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 
@@ -13,7 +13,7 @@
 		name="description"
 		content="SKS Axiom designs, develops, secures, deploys and maintains modern web applications and cloud infrastructure — from first idea to production system."
 	/>
-	<link rel="icon" type="image/png" href={iconSquare} />
+	<link rel="icon" type="image/svg+xml" href={iconSquare} />
 	<meta property="og:title" content="SKS Axiom — We Build. Secure. Deploy. Scale." />
 	<meta
 		property="og:description"
